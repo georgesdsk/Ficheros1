@@ -1,10 +1,8 @@
 package Clases;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class estadisticaTexto5 {
@@ -16,35 +14,55 @@ public class estadisticaTexto5 {
      */
     public static void main(String[] args) {
 
-
-        try {
-           // BufferedReader lector = new BufferedReader(new FileReader(escribirRuta()));
-            File file = new File(escribirRuta());
-
-
-
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        //Arrays.stream(contadorPalabrasCaracteres("./src/5Prueba")).forEach(System.out::println);
+        System.out.println(contadorLineas("./src/5prueba"));
     }
 
     public static int[] contadorPalabrasCaracteres(String ruta){
 
-        Scanner sc = new Scanner(ruta); // llamamos a escribirRuta para que nos de una que ya exista
+        Scanner sc = null; // llamamos a escribirRuta para que nos de una que ya exista
+        try {
+          sc = new Scanner(new FileInputStream(ruta));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
-        int[] palabrasCaracteres = new int[1]; // la posicion 0 son las palabras y la 1 las letras
+        int[] palabrasCaracteres = new int[2]; // la posicion 0 son las palabras y la 1 las letras
         int i = 0 , j = 0;
 
         while(sc.hasNext()){ // con el metodo hasNext() del Scanner se puede contar palabras con mucha mas facilidad que utilizando el split() y convirtiendolo en array
             palabrasCaracteres[0] = i++;// palabras
-            palabrasCaracteres[1] = sc.next().length();//caracteres
+            palabrasCaracteres[1] += sc.next().length();//caracteres
         }
 
         return palabrasCaracteres;
     }
 
+
+    /*
+    contadorLineas: Lo voy hacer mediante,el metodo split de \n
+     */
+
+    public static int contadorLineas(String ruta){ // se podra colocar un switch que sume en cada variable distinta dependiendo del caracter, que salte
+        //los caracteres especiales como el ,.
+
+        char caracterConvertido;
+        int parrafos = 0;
+
+        try {
+            FileReader lector = new FileReader(ruta);
+            int cursorLector = 0;
+            while(cursorLector != -1){
+                cursorLector = lector.read();
+                if ((char)cursorLector == '\n' ){
+                    ++parrafos;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return parrafos;
+    }
 
     public static String escribirRuta(){
 
