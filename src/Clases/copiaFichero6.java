@@ -11,33 +11,50 @@ copia a otro. Las rutas de ambos archivos son recibidas como parámetros.
      */
 
 
-    public void copiaFicheroTexto(String ficheroOriginal, String ficheroReceptor){
+    public static void main(String[] args) {
 
-        File original = new File(ficheroOriginal);
-        File receptor = new File(ficheroReceptor);
+        File original = new File("./src/5prueba");
+        File copia = new File("./src/pruebaCopia");
 
-        try {
-            BufferedWriter escritor = new BufferedWriter(new FileWriter(receptor));
-            BufferedReader lector = new BufferedReader(new FileReader(original));
+        copiaFicheroTexto("./src/5prueba", "./src/pruebaCopia");
+
+        printFile(copia);
+
+    }
+
+
+    public static void copiaFicheroTexto(String ficheroOriginal, String ficheroReceptor) {
+
+        try(
+        BufferedWriter escritor = new BufferedWriter(new FileWriter(ficheroReceptor));
+        BufferedReader lector = new BufferedReader(new FileReader(ficheroOriginal));
+        )
+        {
             String lineaLeida;
 
-            while((lineaLeida =lector.readLine())!= null ){
+            lineaLeida =lector.readLine();
+
+            while(lineaLeida != null ){
+               // System.out.println(lineaLeida);
                 escritor.write(lineaLeida);
+                escritor.newLine();
+                lineaLeida=lector.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void printFile(File file){
+    public static void printFile(File file){
 
-        try {
-            BufferedReader lector = new BufferedReader(new FileReader(file));
-            String lineaLeida;
-            while((lineaLeida = lector.readLine())!= null){
+        try
+           // BufferedReader lector = new BufferedReader(new FileReader(file));
+                (FileReader lector = new FileReader(file)){
+            //String lineaLeida;
+            int caracterLeido;
 
-
-
+            while((caracterLeido = lector.read()) != -1){
+                System.out.print((char)caracterLeido);
             }
 
         } catch (IOException e) {
