@@ -47,9 +47,9 @@ copia a otro. Las rutas de ambos archivos son recibidas como parámetros.
 
     public static void printFile(File file){
 
-        try
+        try(FileReader lector = new FileReader(file)){
            // BufferedReader lector = new BufferedReader(new FileReader(file));
-                (FileReader lector = new FileReader(file)){
+
             //String lineaLeida;
             int caracterLeido;
 
