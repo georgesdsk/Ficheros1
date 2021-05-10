@@ -14,9 +14,9 @@ copia a otro. Las rutas de ambos archivos son recibidas como parámetros.
     public static void main(String[] args) {
 
         File original = new File("./src/5prueba");
-        File copia = new File("./src/pruebaCopia");
+        File copia = new File("./src/pruebaCopia.txt");
 
-        copiaFicheroTexto("./src/5prueba", "./src/pruebaCopia");
+        copiaFicheroTexto("./src/5prueba", "./src/pruebaCopia.txt");
 
         printFile(copia);
 

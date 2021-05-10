@@ -33,9 +33,12 @@ public class estadisticaTexto5 {
         while(sc.hasNext()){ // con el metodo hasNext() del Scanner se puede contar palabras con mucha mas facilidad que utilizando el split() y convirtiendolo en array
             palabrasCaracteres[0] = i++;// palabras
             palabrasCaracteres[1] += sc.next().length();//caracteres
+
         }
 
         return palabrasCaracteres;
+
+        
     }
 
 

@@ -1,0 +1,5 @@
+
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ãÃƒé8§ùï³“/
+c	java:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8“µ†µ“/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(é³èí8Óı§´“/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€’¥¨üÿÿÿÿ

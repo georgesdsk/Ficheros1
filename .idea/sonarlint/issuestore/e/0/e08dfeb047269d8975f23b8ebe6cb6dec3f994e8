@@ -1,0 +1,14 @@
+
+]	java:S125"<This block of commented-out lines of code should be removed.(Ğ“™ßıÿÿÿÿ8ãƒ³“/
+]	java:S125"<This block of commented-out lines of code should be removed.(âÛÏçûÿÿÿÿ8ò©³“/
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(Éø„ùÿÿÿÿ8ş¬Ä²“/
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(öØÈ¢8›†Ë²“/
+F
+java:S1481")Remove this unused "file" local variable.(Ø­»ë8ãƒ³“/
+T
+java:S3958"2Refactor the code so this stream pipeline is used.(û‚İÏüÿÿÿÿ8ò©³“/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€’¥¨üÿÿÿÿ
+U
+java:S1854"8Remove this useless assignment to local variable "file".(Ø­»ë8ãƒ³“/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(®ÿİİ8—ã»²“/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(÷ò†½8—àİ±“/
