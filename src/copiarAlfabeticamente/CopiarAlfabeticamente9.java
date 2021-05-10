@@ -30,8 +30,7 @@ public class CopiarAlfabeticamente9 {
         try (
             //archivoOriginal =new File(ruta); // si no se encuentra el  file, se captura la excepcion
            // archivoNuevo = new File("./src/Ficheros/" + ruta + "Ordenado.txt"); todo da error
-            Scanner sc = new Scanner(new FileReader(archivoOriginal));
-
+            Scanner sc = new Scanner(new FileReader(archivoOriginal))
                     )
         {
             while (sc.hasNext()) {
@@ -40,12 +39,13 @@ public class CopiarAlfabeticamente9 {
         } catch(FileNotFoundException e){
             e.printStackTrace();
         }
-
+/*
         palabras.sort(Comparator.naturalOrder());
-
-            try {
-              //  archivoNuevo.createNewFile();
-                BufferedWriter escritor = new BufferedWriter(new FileWriter(archivoNuevo));
+       // archivoNuevo.createNewFile();
+            try
+                (
+                    BufferedWriter escritor = new BufferedWriter(new FileWriter(archivoNuevo)
+                ){
                 //palabras.stream().forEachOrdered(s-> escritor.write(s));
                 for (String p:
                      palabras) {
@@ -55,11 +55,11 @@ public class CopiarAlfabeticamente9 {
             } catch (IOException e) {
                 e.printStackTrace();
             }finally{
-
+*/
                 //todo No me dejaba ponerlo entre parentesis ni ponerlo en el finally porque no me reconocia al escritor.
                 // Por lo que no he poddido cerrar bien los bufers
 
             }
     }
 
-}
+

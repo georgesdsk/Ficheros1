@@ -15,25 +15,33 @@ public class estadisticaTexto5 {
     public static void main(String[] args) {
 
         //Arrays.stream(contadorPalabrasCaracteres("./src/5Prueba")).forEach(System.out::println);
-        System.out.println(contadorLineas("./src/5prueba"));
+        System.out.println("numero lineas "+contadorLineas("./src/Ficheros/5prueba"));
+
+        for(int numero: contadorPalabrasCaracteres("./src/Ficheros/5prueba")){
+            System.out.println(numero);
+        }
+
     }
 
     public static int[] contadorPalabrasCaracteres(String ruta){
 
-        Scanner sc = null; // llamamos a escribirRuta para que nos de una que ya exista
-        try {
-          sc = new Scanner(new FileInputStream(ruta));
+      //  Scanner sc = null; // llamamos a escribirRuta para que nos de una que ya exista
+        int[] palabrasCaracteres = null;
+
+        try (
+                Scanner sc = new Scanner(new FileInputStream(ruta))
+        ){
+
+          palabrasCaracteres = new int[2]; // la posicion 0 son las palabras y la 1 las letras
+            int i = 0 , j = 0;
+
+            while(sc.hasNext()){ // con el metodo hasNext() del Scanner se puede contar palabras con mucha mas facilidad que utilizando el split() y convirtiendolo en array
+                palabrasCaracteres[0] = i++;// palabras
+                palabrasCaracteres[1] += sc.next().length();//caracteres
+            }
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-
-        int[] palabrasCaracteres = new int[2]; // la posicion 0 son las palabras y la 1 las letras
-        int i = 0 , j = 0;
-
-        while(sc.hasNext()){ // con el metodo hasNext() del Scanner se puede contar palabras con mucha mas facilidad que utilizando el split() y convirtiendolo en array
-            palabrasCaracteres[0] = i++;// palabras
-            palabrasCaracteres[1] += sc.next().length();//caracteres
-
         }
 
         return palabrasCaracteres;
@@ -55,6 +63,7 @@ public class estadisticaTexto5 {
         try {
             FileReader lector = new FileReader(ruta);
             int cursorLector = 0;
+            //mejor con buffer
             while(cursorLector != -1){
                 cursorLector = lector.read();
                 if ((char)cursorLector == '\n' ){

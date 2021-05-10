@@ -26,8 +26,8 @@ copia a otro. Las rutas de ambos archivos son recibidas como parámetros.
     public static void copiaFicheroTexto(String ficheroOriginal, String ficheroReceptor) {
 
         try(
-        BufferedWriter escritor = new BufferedWriter(new FileWriter(ficheroReceptor));
-        BufferedReader lector = new BufferedReader(new FileReader(ficheroOriginal));
+            BufferedWriter escritor = new BufferedWriter(new FileWriter(ficheroReceptor));
+            BufferedReader lector = new BufferedReader(new FileReader(ficheroOriginal));
         )
         {
             String lineaLeida;
