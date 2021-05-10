@@ -25,3 +25,7 @@ c
 3src/comparadorCaracteres8/ComparadorCaracteres.java,e\7\e728677fbb084726ea5ebd5754f8d25e40732dcc
 e
 5src/copiarAlfabeticamente/CopiarAlfabeticamente9.java,2\4\24d77a0a9d5020f887a9b8aefbd63a8857dcfaec
+W
+'src/comparadorCaracteres8/Caracter.java,4\2\42b14471527f4be9aa463a2911c8ed358f5f483f
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
